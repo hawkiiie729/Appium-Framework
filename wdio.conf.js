@@ -1,3 +1,5 @@
+import path from 'path';
+
 export const config = {
     //
     // ====================
@@ -23,6 +25,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,11 +55,12 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'Android',
-        browserName: 'Chrome',
-        'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2'
+        'appium:platformName':'Android',
+        'appium:platformVersion':'14.0',
+        'appium:deviceName':'Pixel 3a',
+        'appium:automationName':'UIAutomator2',
+       // /Users/sudhanshu/wdio-appium/app/android/ApiDemos-debug.apk
+        'appium:app':path.join(process.cwd(),'app/android/ApiDemos-debug.apk')
     }],
 
     //
